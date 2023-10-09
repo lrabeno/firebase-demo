@@ -11,6 +11,8 @@ export const Auth = () => {
   const [password, setPassword] = useState('');
 
   console.log(auth?.currentUser?.email);
+
+  //sign in function using email and password
   const signIn = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -18,7 +20,7 @@ export const Auth = () => {
       console.log(error);
     }
   };
-
+  //google authentication function
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
