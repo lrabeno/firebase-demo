@@ -6,6 +6,7 @@ import { Movies } from './components/movies';
 import { db } from './config/firebase';
 import { collection } from 'firebase/firestore';
 import { getDocs } from 'firebase/firestore';
+import { doc, deleteDoc } from 'firebase/firestore';
 
 function App() {
   // creates a reference to what collection we are connecting to
@@ -28,6 +29,13 @@ function App() {
       console.log(error);
     }
   };
+  const deleteMovie = async (id) => {
+    const movieDoc = doc(db, 'movies', id);
+    await deleteDoc(movieDoc);
+  };
+  useEffect(() => {
+    getMovieList();
+  }, []);
 
   return (
     <div className="App">
@@ -42,6 +50,7 @@ function App() {
         moviesCollectionRef={moviesCollectionRef}
         movieList={movieList}
         getMovieList={getMovieList}
+        deleteMovie={deleteMovie}
       />
     </div>
   );
