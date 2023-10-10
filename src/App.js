@@ -4,9 +4,13 @@ import { Auth } from './components/auth';
 import { CreateMovie } from './components/CreateMovie';
 import { Movies } from './components/Movies';
 import { db } from './config/firebase';
-import { collection } from 'firebase/firestore';
-import { getDocs } from 'firebase/firestore';
-import { doc, deleteDoc } from 'firebase/firestore';
+import {
+  getDocs,
+  collection,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from 'firebase/firestore';
 
 function App() {
   // creates a reference to what collection we are connecting to
@@ -34,6 +38,7 @@ function App() {
     await deleteDoc(movieDoc);
     await getMovieList();
   };
+
   useEffect(() => {
     getMovieList();
   }, []);
@@ -52,6 +57,8 @@ function App() {
         movieList={movieList}
         getMovieList={getMovieList}
         deleteMovie={deleteMovie}
+        // setUpdatedTitle={setUpdatedTitle}
+        // updateMovieTitle={updateMovieTitle}
       />
     </div>
   );
