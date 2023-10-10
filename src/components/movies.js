@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 export const Movies = ({ movieList, getMovieList, deleteMovie }) => {
   //map through the movieList to display our list
+
   return (
     <div>
       {movieList.map((movie) => (
