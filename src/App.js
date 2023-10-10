@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { Auth } from './components/auth';
-import { CreateMovie } from './components/createMovie';
-import { Movies } from './components/movies';
+import { CreateMovie } from './components/CreateMovie';
+import { Movies } from './components/Movies';
 import { db } from './config/firebase';
 import { collection } from 'firebase/firestore';
 import { getDocs } from 'firebase/firestore';

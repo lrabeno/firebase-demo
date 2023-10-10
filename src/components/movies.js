@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-export const Movies = ({ movieList, getMovieList, deleteMovie }) => {
+export const Movies = ({ movieList, deleteMovie }) => {
   //map through the movieList to display our list
 
   return (
