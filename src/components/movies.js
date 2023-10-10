@@ -20,7 +20,7 @@ export const Movies = ({ movieList, deleteMovie, getMovieList }) => {
           <p>Release year: {movie.releaseDate}</p>
           <button onClick={() => deleteMovie(movie.id)}>Delete movie</button>
           <input
-            placeholder="new title..."
+            placeholder="new title.."
             onChange={(e) => setUpdatedTitle(e.target.value)}
           />
           <button onClick={() => updateMovieTitle(movie.id)}>
